@@ -26,8 +26,10 @@
 
         <SeekBar
             android:id="@+id/Minutes_Slider"
+            style="@android:style/Widget.DeviceDefault.Light.SeekBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp" />
 
         <TextView
             android:id="@+id/Minutes"
@@ -43,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
             android:text="@string/add" />
 
     </LinearLayout>
