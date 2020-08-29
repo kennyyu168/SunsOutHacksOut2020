@@ -20,4 +20,7 @@
     <string name="enter_goal">Enter Goal</string>
     <string name="_0_minutes">0 minutes</string>
     <string name="add_more_goals">Add more goals</string>
+    <string name="xx_minutes">XX minutes</string>
+    <string name="test_goal_name">Test Goal Name</string>
+    <string name="untitled_motivation">Untitled Motivation</string>
 </resources>
