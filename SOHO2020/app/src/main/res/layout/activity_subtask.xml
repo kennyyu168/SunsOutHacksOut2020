@@ -2,64 +2,86 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_anchorGravity="center"
+    android:layout_gravity="center|center_vertical"
+    android:background="#FFFFFF"
+    android:clipToPadding="false"
     tools:context=".SubtaskActivity">
 
     <LinearLayout
-        android:layout_width="317dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="105dp"
-        android:orientation="vertical"
-        tools:ignore="UselessParent"
-        android:layout_marginLeft="105dp">
-
+        android:layout_width="259dp"
+        android:layout_height="match_parent"
+        android:background="#F4F4F4"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/Goals_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
             android:text="@string/goals"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            tools:ignore="RtlHardcoded" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/Goal_text_box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:gravity="left"
             android:hint="@string/enter_goal"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:importantForAutofill="no" />
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            tools:ignore="RtlHardcoded" />
 
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/Goals_minutes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:text="@string/textview"
-            tools:ignore="RtlHardcoded" />
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/_0_minutes"
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
+            android:id="@+id/Goals_more_button"
+            android:layout_width="107dp"
             android:layout_height="wrap_content"
-            android:text="@string/button" />
+            android:layout_gravity="right"
+            android:minHeight="30dp"
+            android:text="@string/add_more_goals"
+            android:textSize="10sp"
+            tools:ignore="RtlHardcoded,SmallSp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/Goals_add_subtask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingLeft="20dp"
-            android:text="@string/add"
-            android:paddingStart="20dp"
-            tools:ignore="RtlSymmetry" />
+            android:layout_gravity="center"
+            tools:text="@string/add" />
     </LinearLayout>
+
+    <
+
+    <
+
+    <
+
+    <
+
+    <
+
+    <
 
 </FrameLayout>
