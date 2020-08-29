@@ -23,4 +23,6 @@
     <string name="xx_minutes">XX minutes</string>
     <string name="test_goal_name">Test Goal Name</string>
     <string name="untitled_motivation">Untitled Motivation</string>
+    <string name="test_task_1">Test task 1</string>
+    <string name="xx_minutes_left">XX minutes left</string>
 </resources>
