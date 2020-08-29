@@ -7,29 +7,89 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
+import static android.view.View.GONE;
+
 public class MainActivity extends AppCompatActivity {
+
+    private FloatingActionButton mFloatingAddButton; // Floating button for adding new task
+    private boolean isNewTaskFragmentDisplayed = false; // Checks for fragment displaying
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mFloatingAddButton = findViewById(R.id.new_task);
+        mFloatingAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "It's gonna add something", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                // Open the fragment if it's not already showing
+                if (!isNewTaskFragmentDisplayed) {
+                    // fade background
+                    View fadeBackground = findViewById(R.id.fade_background);
+                    fadeBackground.setVisibility(View.VISIBLE);
+                    fadeBackground.animate().alpha(0.5f);
+
+                    // open the fragment
+                    displayFragment();
+                } else {
+                    // jank close it for now
+                    closeFragment();
+
+                    // take away fading background
+                    View fadeBackground = findViewById(R.id.fade_background);
+                    fadeBackground.setVisibility(GONE);
+                }
             }
         });
+    }
+
+    /**
+     * Displays the fragment using a FragmentManager.
+     */
+    public void displayFragment() {
+        // Create a new task fragment
+        NewTaskFragment newTaskFragment = NewTaskFragment.newInstance();
+
+        // Get Fragment manager and start a transaction to add the fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        // Add the NewTaskFragment
+        fragmentTransaction.add(R.id.fragment_container,
+                newTaskFragment).addToBackStack(null).commit();
+
+        // Set boolean flag to indicate fragment is open
+        isNewTaskFragmentDisplayed = true;
+    }
+
+    /**
+     * Closes the fragment.
+     */
+    public void closeFragment() {
+        // Get the fragment manager
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        // Check to see if the fragment is already showing
+        NewTaskFragment newTaskFragment =
+                (NewTaskFragment) fragmentManager.findFragmentById(R.id.fragment_container);
+        if (newTaskFragment != null) {
+            // Create and commit the transaction to remove the fragment
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.remove(newTaskFragment).commit();
+        }
+
+        // Set boolean flag to indicate fragment is closed
+        isNewTaskFragmentDisplayed = false;
     }
 
     @Override
