@@ -21,9 +21,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
             android:text="@string/goals"
             android:textSize="30sp"
-            tools:ignore="RtlHardcoded" />
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
 
         <EditText
             android:id="@+id/Goal_text_box"
