@@ -29,4 +29,9 @@
     <string name="untitled_motivation">Untitled Motivation</string>
     <string name="test_task_1">Test task 1</string>
     <string name="xx_minutes_left">XX minutes left</string>
+    <string name="title_activity_start">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="sign_in_prompt">Please Sign In to Start Using</string>
+    <string name="sign_in">Sign In</string>
 </resources>
