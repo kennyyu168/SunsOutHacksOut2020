@@ -9,6 +9,6 @@ public class SubtaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subtask);
+        setContentView(R.layout.fragment_subtask);
     }
 }
