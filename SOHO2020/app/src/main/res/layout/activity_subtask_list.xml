@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/Selected_main_goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="20dp"
+            android:text="@string/test_goal_name"
+            android:textSize="40sp"
+            android:paddingStart="5dp"
+            tools:ignore="RtlSymmetry" />
+
+        <ProgressBar
+            android:id="@+id/interim_progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="24dp"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/goal_totaltime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingRight="40dp"
+            android:text="@string/xx_minutes"
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/shown_subtask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/test_task_1"
+            android:textSize="24sp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/subtask_timeremain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingRight="40dp"
+            android:text="@string/xx_minutes_left"
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
+    </LinearLayout>
+</FrameLayout>
