@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!isNewTaskFragmentDisplayed) {
                     // fade background
                     View fadeBackground = findViewById(R.id.fade_background);
-                    fadeBackground.setVisibility(View.VISIBLE);
+                    fadeBackground.setVisibility (View.VISIBLE);
                     fadeBackground.animate().alpha(0.5f);
 
                     // open the fragment
