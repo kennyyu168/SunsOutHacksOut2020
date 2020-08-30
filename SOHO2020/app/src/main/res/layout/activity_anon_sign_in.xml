@@ -20,7 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:paddingBottom="3dp"
             android:text="@string/please_enter"
+            android:textColor="@android:color/secondary_text_light"
             android:textSize="18sp" />
 
         <EditText
@@ -58,7 +60,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/sign_up" />
+            android:background="#03DAC5"
+            android:text="@string/sign_up"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

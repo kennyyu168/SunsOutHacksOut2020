@@ -11,10 +11,12 @@
     tools:context=".SubtaskActivity">
 
     <LinearLayout
-        android:layout_width="259dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:background="#F4F4F4"
-        android:orientation="vertical">
+        android:background="#ECECEC"
+        android:orientation="vertical"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp">
 
         <TextView
             android:id="@+id/Goals_text"
@@ -29,10 +31,11 @@
 
         <EditText
             android:id="@+id/Goal_text_box"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="4dp"
             android:ems="10"
-            android:gravity="left"
             android:hint="@string/enter_goal"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
@@ -52,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:paddingEnd="10dp"
-            android:paddingRight="10dp"
+            android:paddingRight="14dp"
             android:text="@string/_0_minutes"
             tools:ignore="RtlHardcoded,RtlSymmetry" />
 
@@ -61,6 +64,7 @@
             android:layout_width="107dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:background="#00FFFFFF"
             android:minHeight="30dp"
             android:text="@string/add_more_goals"
             android:textSize="10sp"
@@ -71,6 +75,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:background="#03DAC5"
+            android:textColor="#FFFFFF"
             tools:text="@string/add" />
     </LinearLayout>
 
