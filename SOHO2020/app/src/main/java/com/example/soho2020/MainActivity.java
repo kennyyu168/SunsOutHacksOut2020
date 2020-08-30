@@ -10,6 +10,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
@@ -23,10 +26,25 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton mFloatingAddButton; // Floating button for adding new task
     private boolean isNewTaskFragmentDisplayed = false; // Checks for fragment displaying
 
+    private RecyclerView recyclerView; // Recycler View to display the files
+    private RecyclerView.Adapter mAdapter; // Attach and adapter for data to be displayed
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Check if the recycler view adapter is there or not
+        if (mAdapter == null) {
+            // Get fragment and RecyclerView from the layout and connect them
+            Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.task_list);
+            recyclerView = (RecyclerView) currentFragment.getView();
+            mAdapter = ((RecyclerView) currentFragment.getView()).getAdapter();
+            recyclerView.addItemDecoration(
+                    new DividerItemDecoration(recyclerView.getContext(),
+                            DividerItemDecoration.VERTICAL));
+            // new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
+        }
 
         mFloatingAddButton = findViewById(R.id.new_task);
         mFloatingAddButton.setOnClickListener(new View.OnClickListener() {
